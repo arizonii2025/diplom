@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Основные шрифты HTML</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #4a6fa5;
+            --secondary: #6b8cbc;
+            --accent: #ff7e5f;
+            --light: #f8f9fa;
+            --dark: #343a40;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        header {
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(255,255,255,0.1)"/></svg>');
+            background-size: cover;
+        }
+
+        h1 {
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+            position: relative;
+        }
+
+        .subtitle {
+            font-family: Verdana, Geneva, sans-serif;
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: white;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-weight: bold;
+            font-size: 1.5rem;
+            color: var(--primary);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: 500;
+            transition: var(--transition);
+            padding: 0.5rem 0;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--accent);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Main Content */
+        main {
+            padding: 4rem 0;
+        }
+
+        .intro {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .intro h2 {
+            font-family: 'Trebuchet MS', sans-serif;
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+
+        .intro p {
+            font-family: Verdana, Geneva, sans-serif;
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            color: #555;
+        }
+
+        .font-showcase {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .font-card {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .font-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .font-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(to right, var(--primary), var(--accent));
+        }
+
+        .font-name {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .font-sample {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            min-height: 60px;
+        }
+
+        .font-description {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .font-usage {
+            background-color: #f8f9fa;
+            padding: 1rem;
+            border-radius: 5px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            overflow-x: auto;
+        }
+
+        /* Font Specific Styles */
+        .arial { font-family: Arial, Helvetica, sans-serif; }
+        .helvetica { font-family: Helvetica, Arial, sans-serif; }
+        .times { font-family: "Times New Roman", Times, serif; }
+        .georgia { font-family: Georgia, serif; }
+        .verdana { font-family: Verdana, Geneva, sans-serif; }
+        .trebuchet { font-family: "Trebuchet MS", sans-serif; }
+
+        /* Features Section */
+        .features {
+            background: white;
+            border-radius: 10px;
+            padding: 3rem;
+            box-shadow: var(--shadow);
+            margin-bottom: 4rem;
+        }
+
+        .features h2 {
+            font-family: 'Trebuchet MS', sans-serif;
+            text-align: center;
+            margin-bottom: 2rem;
+            color: var(--primary);
+            font-size: 2.2rem;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature {
+            text-align: center;
+            padding: 1.5rem;
+        }
+
+        .feature i {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .feature h3 {
+            font-family: Georgia, serif;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+
+        .feature p {
+            color: #666;
+            font-family: Verdana, Geneva, sans-serif;
+        }
+
+        /* CTA Section */
+        .cta {
+            text-align: center;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            color: white;
+            padding: 4rem 2rem;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
+
+        .cta h2 {
+            font-family: 'Trebuchet MS', sans-serif;
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .cta p {
+            font-family: Verdana, Geneva, sans-serif;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            font-size: 1.1rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--accent);
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn:hover {
+            background-color: #ff6b4a;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 3rem 0 2rem;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-column h3 {
+            font-family: Georgia, serif;
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+            color: var(--accent);
+        }
+
+        .footer-column p, .footer-column a {
+            font-family: Verdana, Geneva, sans-serif;
+            color: #ccc;
+            margin-bottom: 0.8rem;
+            display: block;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-column a:hover {
+            color: white;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background-color: var(--accent);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-family: Arial, Helvetica, sans-serif;
+            color: #999;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            .nav-container {
+                flex-direction: column;
+            }
+            
+            .nav-links {
+                margin-top: 1rem;
+            }
+            
+            .nav-links li {
+                margin: 0 1rem;
+            }
+            
+            .font-showcase {
+                grid-template-columns: 1fr;
+            }
+            
+            .features {
+                padding: 2rem 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Основные шрифты HTML</h1>
+            <p class="subtitle">Исследуйте классические веб-шрифты, которые делают ваш контент красивым и читаемым</p>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container nav-container">
+            <div class="logo">TypographyGuide</div>
+            <ul class="nav-links">
+                <li><a href="#"><i class="fas fa-home"></i> Главная</a></li>
+                <li><a href="#"><i class="fas fa-font"></i> Шрифты</a></li>
+                <li><a href="#"><i class="fas fa-palette"></i> Примеры</a></li>
+                <li><a href="#"><i class="fas fa-book"></i> Руководство</a></li>
+                <li><a href="#"><i class="fas fa-envelope"></i> Контакты</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+        <section class="intro">
+            <h2>Шесть основных веб-шрифтов</h2>
+            <p>Эти шрифты предустановлены в большинстве операционных систем, что гарантирует их корректное отображение на различных устройствах без необходимости загрузки дополнительных ресурсов.</p>
+        </section>
+
+        <section class="font-showcase">
+            <div class="font-card">
+                <h3 class="font-name arial">Arial</h3>
+                <div class="font-sample arial">Самый популярный веб-шрифт без засечек</div>
+                <p class="font-description">Чистый, современный и универсальный шрифт, отлично подходящий для основного текста и интерфейсов.</p>
+                <div class="font-usage">font-family: Arial, Helvetica, sans-serif;</div>
+            </div>
+
+            <div class="font-card">
+                <h3 class="font-name helvetica">Helvetica</h3>
+                <div class="font-sample helvetica">Классический шрифт без засечек</div>
+                <p class="font-description">Шрифт, ставший стандартом в графическом дизайне, известный своей нейтральностью и элегантностью.</p>
+                <div class="font-usage">font-family: Helvetica, Arial, sans-serif;</div>
+            </div>
+
+            <div class="font-card">
+                <h3 class="font-name times">Times New Roman</h3>
+                <div class="font-sample times">Традиционный шрифт с засечками</div>
+                <p class="font-description">Классический шрифт с засечками, идеально подходящий для длинных текстов и официальных документов.</p>
+                <div class="font-usage">font-family: "Times New Roman", Times, serif;</div>
+            </div>
+
+            <div class="font-card">
+                <h3 class="font-name georgia">Georgia</h3>
+                <div class="font-sample georgia">Элегантный шрифт с засечками</div>
+                <p class="font-description">Красивый шрифт с засечками, оптимизированный для чтения на экранах, с высокой читаемостью.</p>
+                <div class="font-usage">font-family: Georgia, serif;</div>
+            </div>
+
+            <div class="font-card">
+                <h3 class="font-name verdana">Verdana</h3>
+                <div class="font-sample verdana">Широкий и читаемый шрифт</div>
+                <p class="font-description">Широкий шрифт без засечек, разработанный для максимальной читаемости даже при маленьких размерах.</p>
+                <div class="font-usage">font-family: Verdana, Geneva, sans-serif;</div>
+            </div>
+
+            <div class="font-card">
+                <h3 class="font-name trebuchet">Trebuchet MS</h3>
+                <div class="font-sample trebuchet">Современный и стильный шрифт</div>
+                <p class="font-description">Элегантный шрифт без засечек, часто используемый в заголовках и современном веб-дизайне.</p>
+                <div class="font-usage">font-family: "Trebuchet MS", sans-serif;</div>
+            </div>
+        </section>
+
+        <section class="features">
+            <h2>Почему выбирают безопасные веб-шрифты?</h2>
+            <div class="features-grid">
+                <div class="feature">
+                    <i class="fas fa-bolt"></i>
+                    <h3>Быстрая загрузка</h3>
+                    <p>Не требуют дополнительных HTTP-запросов, так как уже установлены в системе пользователя</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-check-circle"></i>
+                    <h3>Надежность</h3>
+                    <p>Гарантированно отображаются корректно на большинстве устройств и браузеров</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-eye"></i>
+                    <h3>Читаемость</h3>
+                    <p>Оптимизированы для отображения на экранах с различным разрешением</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-universal-access"></i>
+                    <h3>Доступность</h3>
+                    <p>Поддерживают различные языки и символы, обеспечивая доступность контента</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta">
+            <h2>Готовы улучшить свою типографику?</h2>
+            <p>Изучите наши руководства по использованию шрифтов и создавайте красивые, читаемые веб-сайты</p>
+            <a href="#" class="btn">Изучить руководства</a>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>TypographyGuide</h3>
+                    <p>Ресурс, посвященный веб-типографике и использованию шрифтов в дизайне.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Быстрые ссылки</h3>
+                    <a href="#">Главная</a>
+                    <a href="#">Шрифты</a>
+                    <a href="#">Примеры</a>
+                    <a href="#">Руководства</a>
+                </div>
+                <div class="footer-column">
+                    <h3>Ресурсы</h3>
+                    <a href="#">Google Fonts</a>
+                    <a href="#">Adobe Fonts</a>
+                    <a href="#">Font Pairing</a>
+                    <a href="#">Typography Rules</a>
+                </div>
+                <div class="footer-column">
+                    <h3>Контакты</h3>
+                    <p>info@typographyguide.com</p>
+                    <p>+7 (123) 456-78-90</p>
+                    <p>Москва, Россия</p>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2023 TypographyGuide. Все права защищены.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Добавляем интерактивность для карточек шрифтов
+        document.querySelectorAll('.font-card').forEach(card => {
+            card.addEventListener('click', function() {
+                this.classList.toggle('active');
+            });
+        });
+        
+        // Плавная прокрутка для навигационных ссылок
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
